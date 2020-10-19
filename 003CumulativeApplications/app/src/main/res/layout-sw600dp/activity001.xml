@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- this is an alternate layout for tablets-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,9 +13,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="20pt"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:textSize="24sp"
+        android:layout_marginTop="36dp"
+        android:textSize="48sp"
         android:textColor="@color/colorBlack"
         android:textStyle="italic|bold"
         android:text="@string/a1_header" />
@@ -22,10 +24,10 @@
     <!-- This is the Image/Button -->
     <ImageView
         android:id="@+id/a1_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
         android:layout_gravity="center"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         app:srcCompat="@drawable/a1eightball" />
 
     <!-- This is the Reply/Answer -->
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:textSize="24sp"
+        android:textSize="48dp"
         android:textColor="@color/colorBlack"
         android:textStyle="italic|bold"
         android:text="@string/a1_greeting" />

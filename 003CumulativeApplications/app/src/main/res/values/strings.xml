@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">003 Cumulative Applications</string>
+
     <string name="app_name1">001 Magic Eightball</string>
     <string name="app_name2">002 To Do List</string>
     <string name="app_name3">003 Metaverse</string>
+
+    <string name="a1_header">Ask The Magic 8 Ball</string>
+    <string name="a1_greeting">Ask a question before you press!</string>
+
+    <string name="a2_hint_text">Enter Item</string>
+    <string name="a2_hint_btn">add</string>
 </resources>
