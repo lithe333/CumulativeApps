@@ -20,6 +20,7 @@ public class A2FileHelper {
 
         try {
             FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            //new? https://www.geeksforgeeks.org/new-operator-java/
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(items);
             oos.close();
@@ -52,4 +53,5 @@ public class A2FileHelper {
         return itemList;
 
     }
+
 }

@@ -42,4 +42,18 @@
         android:textStyle="italic|bold"
         android:text="@string/a1_greeting" />
 
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/back"
+        android:onClick="Back"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@color/colorLimeGreen"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp" />
+
 </LinearLayout>

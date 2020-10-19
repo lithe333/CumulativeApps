@@ -1,5 +1,6 @@
 package com.example.a003cumulativeapplications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -72,5 +73,18 @@ public class Activity002 extends AppCompatActivity implements View.OnClickListen
         adapter.notifyDataSetChanged();
         A2FileHelper.writeData(items,this);
         Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
+    }
+
+    public void Back(View View)
+    {
+        String button_text;
+        button_text =((Button)View).getText().toString();
+        if (button_text.equals("List of Apps"))
+        {
+            Intent back = new Intent(this,MainActivity.class);
+            startActivity(back);
+            Toast.makeText(this, "Back to Main Menu", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }

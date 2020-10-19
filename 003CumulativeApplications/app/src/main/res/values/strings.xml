@@ -5,6 +5,8 @@
     <string name="app_name2">002 To Do List</string>
     <string name="app_name3">003 Metaverse</string>
 
+    <string name="back">List of Apps</string>
+
     <string name="a1_header">Ask The Magic 8 Ball</string>
     <string name="a1_greeting">Ask a question before you press!</string>
 

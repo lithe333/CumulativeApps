@@ -1,16 +1,19 @@
 package com.example.a003cumulativeapplications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 //import android.support.annotation.Nullable;
 
@@ -40,7 +43,6 @@ public class Activity001 extends AppCompatActivity implements View.OnClickListen
         //calling the btn method
         eightballIV.setOnClickListener(this);
 
-
     }
 
     //on touch method
@@ -59,7 +61,7 @@ public class Activity001 extends AppCompatActivity implements View.OnClickListen
                 //adding delay
                 //not sure why TimeUnit.SECONDS.sleep(1); wouldn't compile
                 try {
-                    SECONDS.sleep(1);
+                    MILLISECONDS.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -67,6 +69,19 @@ public class Activity001 extends AppCompatActivity implements View.OnClickListen
                 int rand = new Random().nextInt(answerArray.length);
                 answerTV.setText(answerArray[rand]);
                 break;
+        }
+    }
+
+    public void Back(View View)
+    {
+        String button_text;
+        button_text =((Button)View).getText().toString();
+        if (button_text.equals("List of Apps"))
+        {
+            Intent back = new Intent(this,MainActivity.class);
+            startActivity(back);
+            Toast.makeText(this, "Back to Main Menu", Toast.LENGTH_SHORT).show();
+
         }
     }
 }
