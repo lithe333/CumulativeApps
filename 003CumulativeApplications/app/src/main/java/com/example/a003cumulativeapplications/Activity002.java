@@ -1,6 +1,5 @@
 package com.example.a003cumulativeapplications;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,13 +9,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 //import android.support.annotation.Nullable;
 
-public class Activity002 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class Activity002 extends ButtonsActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     // Initialising the variables
     private EditText itemET;
@@ -75,16 +72,4 @@ public class Activity002 extends AppCompatActivity implements View.OnClickListen
         Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
     }
 
-    public void Back(View View)
-    {
-        String button_text;
-        button_text =((Button)View).getText().toString();
-        if (button_text.equals("List of Apps"))
-        {
-            Intent back = new Intent(this,MainActivity.class);
-            startActivity(back);
-            Toast.makeText(this, "Back to Main Menu", Toast.LENGTH_SHORT).show();
-
-        }
-    }
 }

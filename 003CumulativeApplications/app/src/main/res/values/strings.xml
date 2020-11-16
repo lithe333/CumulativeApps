@@ -3,8 +3,20 @@
 
     <string name="app_name1">001 Magic Eightball</string>
     <string name="app_name2">002 To Do List</string>
-    <string name="app_name3">003 Metaverse</string>
+    <string name="app_name3">003 Under Construction</string>
 
+    <string name="test_name1">003A Button Types</string>
+
+    <string name="test1_btn1">Button 1</string>
+    <string name="test1_tv1">How does button 1 work?</string>
+    <string name="test1_btn2">Button 2</string>
+    <string name="test1_tv2">How does button 2 work?</string>
+    <string name="test1_btn3">Button 3</string>
+    <string name="test1_tv3">How does button 3 work?</string>
+    <string name="test1_btn4">Button 4</string>
+    <string name="test1_tv4">How does button 4 work?</string>
+
+    <string name="tests">List of Tests</string>
     <string name="back">List of Apps</string>
 
     <string name="a1_header">Ask The Magic 8 Ball</string>

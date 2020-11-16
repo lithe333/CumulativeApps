@@ -27,6 +27,9 @@
         <activity android:label="@string/app_name3"
             android:name=".Activity003"></activity>
 
+        <activity android:label="@string/test_name1"
+            android:name=".Activity003A"></activity>
+
     </application>
 
 </manifest>
