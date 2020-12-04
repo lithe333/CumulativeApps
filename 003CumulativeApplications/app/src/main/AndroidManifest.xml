@@ -27,8 +27,43 @@
         <activity android:label="@string/app_name3"
             android:name=".Activity003"></activity>
 
+        <activity android:label="004 Calculator"
+            android:name=".Activity004"></activity>
+
+        <activity android:label="005 Cards"
+            android:name=".Activity005"></activity>
+
+
         <activity android:label="@string/test_name1"
             android:name=".Activity003A"></activity>
+
+        <activity android:label="@string/test_name2"
+            android:name=".Activity003B"></activity>
+
+        <activity android:label="@string/test_name3"
+            android:name=".Activity003C"></activity>
+
+        <activity android:label="@string/test_name4"
+            android:name=".Activity003D"></activity>
+
+
+        <activity android:label="@string/q_name1"
+            android:name=".Activity003B1"></activity>
+
+        <activity android:label="@string/q_name2"
+            android:name=".Activity003B2"></activity>
+
+        <activity android:label="@string/q_name3"
+            android:name=".Activity003B3"></activity>
+
+        <activity android:label="@string/q_name4"
+            android:name=".Activity003B4"></activity>
+
+        <activity android:label="@string/q_name5"
+            android:name=".Activity003B5"></activity>
+
+        <activity android:label="@string/q_name6"
+            android:name=".Activity003B6"></activity>
 
     </application>
 

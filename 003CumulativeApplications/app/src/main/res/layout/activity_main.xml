@@ -61,6 +61,36 @@
             android:layout_marginTop="40dp" />
 
         <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name4"
+            android:onClick="Choose"
+            android:textColor="@color/colorGreen"
+            android:background="@color/colorBlack"
+            android:layout_above="@+id/back_button"
+            android:layout_alignStart="@+id/back_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name5"
+            android:onClick="Choose"
+            android:textColor="@color/colorRed"
+            android:background="@color/colorWhite"
+            android:layout_above="@+id/back_button"
+            android:layout_alignStart="@+id/back_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="40dp" />
+
+        <Button
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

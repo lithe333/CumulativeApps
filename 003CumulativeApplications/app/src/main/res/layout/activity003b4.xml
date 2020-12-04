@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20pt"
+            android:text="This is a Template for Questions"/>
+
+        <Button
+            android:id="@+id/a3b4_back_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="List of Questions"
+            android:onClick="ChooseQ"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@color/colorLavender"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/a3b4_back_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/tests"
+            android:onClick="Choose3"
+            android:textColor="@color/colorLimeGreen"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/a3b4_back_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/back"
+            android:onClick="Back"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@color/colorLimeGreen"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
