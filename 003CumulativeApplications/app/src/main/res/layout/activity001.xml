@@ -17,7 +17,7 @@
         android:textSize="24sp"
         android:textColor="@color/colorBlack"
         android:textStyle="italic|bold"
-        android:text="@string/a1_header" />
+        android:text="@string/a1_header"/>
 
     <!-- This is the Image/Button -->
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="48dp"
-        app:srcCompat="@drawable/a1eightball" />
+        app:srcCompat="@drawable/a1eightball"/>
 
     <!-- This is the Reply/Answer -->
     <TextView
@@ -38,7 +38,7 @@
         android:textSize="24sp"
         android:textColor="@color/colorBlack"
         android:textStyle="italic|bold"
-        android:text="@string/a1_greeting" />
+        android:text="@string/a1_greeting"/>
 
     <Button
         android:id="@+id/a1_back_button"
@@ -52,6 +52,6 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"/>
 
 </LinearLayout>

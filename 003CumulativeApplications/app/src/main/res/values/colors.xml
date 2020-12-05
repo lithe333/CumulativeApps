@@ -7,6 +7,11 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGray">#333333</color>
+    <color name="colorGray2">#666666</color>
+    <color name="colorGray3">#999999</color>
+    <color name="colorGray4">#BBBBBB</color>
+    <color name="colorGray5">#DDDDDD</color>
+    <color name="colorMaroon">#AA0000</color>
     <color name="colorRed">#FF0000</color>
     <color name="colorGreen">#00FF00</color>
     <color name="colorBlue">#0000FF</color>

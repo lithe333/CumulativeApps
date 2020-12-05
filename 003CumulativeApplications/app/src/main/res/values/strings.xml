@@ -43,4 +43,48 @@
 
     <string name="a2_hint_text">Enter Item</string>
     <string name="a2_hint_btn">add</string>
+
+    <string name="a3_header">The whole app is the third app so this activity will have miscellaneous tests</string>
+    <string name="a3a_header">This activity will be testing button implementation</string>
+    <string name="a3b_header">Simple Programming Problems sourced from:
+            from https://adriann.github.io/programming_problems.html</string>
+    <string name="a3b1_header">Elementary Questions</string>
+    <string name="a3b2_header">Lists and Strings Questions</string>
+    <string name="a3b3_header">Intermediate Questions</string>
+    <string name="a3b4_header">Advanced Questions</string>
+    <string name="a3b5_header">GUI Questions</string>
+    <string name="a3b6_header">Open Ended Questions</string>
+    <string name="a3c_header">This is a Template for Test Activities</string>
+    <string name="a3d_header">This is for testing fragments</string>
+
+    <string name="a4_header">This is simple/standard Calculator App</string>
+    <string name="a4_mode_btn1">Simple</string>
+    <string name="a4_mode_btn2">Standard</string>
+    <string name="a4_default">0</string>
+
+    <string name="a4_btn11">MC</string>
+    <string name="a4_btn12">MR</string>
+    <string name="a4_btn13">M+</string>
+    <string name="a4_btn14">M-</string>
+    <string name="a4_btn21">1/x</string>
+    <string name="a4_btn22">x^2</string>
+    <string name="a4_btn23">X^(1/2)</string>
+    <string name="a4_btn24">.</string>
+    <string name="a4_btn31">7</string>
+    <string name="a4_btn32">8</string>
+    <string name="a4_btn33">9</string>
+    <string name="a4_btn34">*</string>
+    <string name="a4_btn41">4</string>
+    <string name="a4_btn42">5</string>
+    <string name="a4_btn43">6</string>
+    <string name="a4_btn44">/</string>
+    <string name="a4_btn51">1</string>
+    <string name="a4_btn52">2</string>
+    <string name="a4_btn53">3</string>
+    <string name="a4_btn54">-</string>
+    <string name="a4_btn61">C</string>
+    <string name="a4_btn62">0</string>
+    <string name="a4_btn63">=</string>
+    <string name="a4_btn64">+</string>
+
 </resources>

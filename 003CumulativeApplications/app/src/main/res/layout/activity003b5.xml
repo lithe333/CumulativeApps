@@ -13,20 +13,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20pt"
-            android:text="This is a Template for Questions"/>
+            android:text="@string/a3b5_header"/>
 
         <Button
             android:id="@+id/a3b5_back_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="List of Questions"
+            android:text="@string/questions"
             android:onClick="ChooseQ"
             android:textColor="@color/colorPrimaryDark"
             android:background="@color/colorLavender"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:id="@+id/a3b5_back_button2"
@@ -39,7 +39,7 @@
             android:background="@color/colorPrimary"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:id="@+id/a3b5_back_button3"
