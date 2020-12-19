@@ -57,9 +57,16 @@
     <string name="a3c_header">This is a Template for Test Activities</string>
     <string name="a3d_header">This is for testing fragments</string>
 
-    <string name="a4_header">This is simple/standard Calculator App</string>
+    <string name="a4_header">This is simple/standard/advanced Calculator App</string>
     <string name="a4_mode_btn1">Simple</string>
     <string name="a4_mode_btn2">Standard</string>
+    <string name="a4_mode_btn3">Advanced</string>
+    <string name="a4_dec_btn1">Decimals</string>
+    <string name="a4_dec_btn2">Rounding</string>
+    <string name="a4_dec_left">&#60;</string>
+    <string name="a4_dec_start">2</string>
+    <string name="a4_dec_right">&#62;</string>
+    <string name="a4_decimals">5</string>
     <string name="a4_default">0</string>
 
     <string name="a4_btn11">MC</string>

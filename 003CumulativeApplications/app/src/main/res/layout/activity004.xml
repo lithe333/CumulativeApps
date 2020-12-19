@@ -41,11 +41,93 @@
                 android:textColor="@color/colorRed"
                 android:layout_margin="10sp"
                 android:visibility="invisible"
-                android:textSize="23sp"
+                android:textSize="30sp"
                 android:textAlignment="textEnd"
                 android:text="@string/a4_default"
                 android:layout_gravity="end"/>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a4_adv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/a4_dec_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a4_dec_btn1"
+                android:onClick="Dec"
+                android:textColor="@color/colorBlack"
+                android:background="@color/colorGray4"
+                android:layout_margin="10sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <Button
+                android:id="@+id/a4_dec_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a4_dec_left"
+                android:onClick="Dec"
+                android:textColor="@color/colorBlack"
+                android:background="@color/colorGray4"
+                android:layout_margin="10sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <TextView
+                android:id="@+id/a4_decimals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBlack"
+                android:textColor="@color/colorBlue"
+                android:layout_margin="10sp"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:text="@string/a4_decimals"
+                android:layout_weight="1"
+                android:gravity="center_horizontal" />
+
+
+
+            <Button
+                android:id="@+id/a4_dec_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a4_dec_right"
+                android:onClick="Dec"
+                android:textColor="@color/colorBlack"
+                android:background="@color/colorGray4"
+                android:layout_margin="10sp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a4_adv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/a4_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBlack"
+                android:textColor="@color/colorBlue"
+                android:layout_margin="10sp"
+                android:textSize="30sp"
+                android:textAlignment="textEnd"
+                android:text="@string/a4_default"
+                android:layout_gravity="end"/>
 
         </LinearLayout>
 
@@ -57,7 +139,7 @@
             android:background="@color/colorBlack"
             android:textColor="@color/colorGreen"
             android:layout_margin="10sp"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:textAlignment="textEnd"
             android:text="@string/a4_default"
             android:layout_gravity="end"/>
