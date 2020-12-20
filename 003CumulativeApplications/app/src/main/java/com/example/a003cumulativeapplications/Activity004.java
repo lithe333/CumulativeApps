@@ -18,6 +18,7 @@ public class Activity004 extends ButtonsActivity {
     public boolean mode_standard = false;
 
     private String number = "";
+    private String decNum = "0";
     private String nullNum = "0";
     private String symbol = "";
     private String symbol2 = "";
@@ -27,7 +28,7 @@ public class Activity004 extends ButtonsActivity {
     private double num2 = 0;
     private double num3 = 0;
     private double num4 = 0;
-    private int decimals = 5;
+    private int decimals = 9;
     private boolean decFlag = false;
     private boolean errFlag = false;
     private boolean memFlag = false;
@@ -164,9 +165,11 @@ public class Activity004 extends ButtonsActivity {
                 if (button_text == "Rounding") {
                     DecButton.setText("Decimals");
                     roundFlag = false;
+                    decimals = 9;
                 } else {
                     DecButton.setText("Rounding");
                     roundFlag = true;
+                    decimals = 2;
                 }
                 break;
             case R.id.a4_dec_left:
@@ -181,6 +184,20 @@ public class Activity004 extends ButtonsActivity {
                 break;
         }
         decimalsTV.setText(Integer.toString(decimals));
+        if (num3 != 0) {
+            DisplayDec(ToStringDec(num3),"memory");
+            //memoryTV.setText(ToStringDec(num3));
+            memFlag = true;
+        } else {
+            memoryTV.setText("0");
+        }
+        if (nullFlag) {
+            DisplayDec(nullNum,"display");
+            //displayTV.setText(nullNum);
+        } else {
+            DisplayDec(number,"display");
+            //displayTV.setText(number);
+        }
     }
 
     public void Mem(View view) {
@@ -249,6 +266,11 @@ public class Activity004 extends ButtonsActivity {
 
         if (nullFlag) {
             number = nullNum;
+            if (symbol == "/") {
+                if (number == "0") {
+                    errFlag = true;
+                }
+            }
 
             switch(view.getId()){
                 case R.id.a4_btn34:
@@ -256,9 +278,6 @@ public class Activity004 extends ButtonsActivity {
                     break;
                 case R.id.a4_btn44:
                     symbol2 = "/";
-                    if (number == "0") {
-                        errFlag = true;
-                    }
                     break;
                 case R.id.a4_btn54:
                     symbol2 = "-";
@@ -304,6 +323,18 @@ public class Activity004 extends ButtonsActivity {
                 switchFlag = false;
             }
 
+            if (symbol3 == "/") {
+                if (rptFlag) {
+                    if (num4==0) {
+                        errFlag = true;
+                    }
+                } else {
+                    if (num2==0) {
+                        errFlag = true;
+                    }
+                }
+            }
+
             switch (symbol3) {
                 case "*":
                     if (rptFlag) {
@@ -314,14 +345,7 @@ public class Activity004 extends ButtonsActivity {
                     break;
                 case "/":
                     if (rptFlag) {
-                        if (num4==0) {
-                            errFlag = true;
-                        } else {
-                            number = ToStringDec(num2/num4);
-                        }
-                    } else if (num2==0) {
-                        errFlag = true;
-                        break;
+                        number = ToStringDec(num2/num4);
                     } else {
                         number = ToStringDec(num1/num2);
                     }

@@ -29,7 +29,7 @@
                 android:onClick="Mode"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorGray4"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"/>
 
@@ -39,12 +39,12 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorBlack"
                 android:textColor="@color/colorRed"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:visibility="invisible"
                 android:textSize="30sp"
                 android:textAlignment="textEnd"
                 android:text="@string/a4_default"
-                android:layout_gravity="end"/>
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
@@ -54,7 +54,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="gone"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
 
             <Button
                 android:id="@+id/a4_dec_btn"
@@ -64,9 +65,7 @@
                 android:onClick="Dec"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorGray4"
-                android:layout_margin="10sp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"/>
+                android:layout_marginHorizontal="10sp"/>
 
             <Button
                 android:id="@+id/a4_dec_left"
@@ -76,9 +75,8 @@
                 android:onClick="Dec"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorGray4"
-                android:layout_margin="10sp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"/>
+                android:layout_marginHorizontal="10sp"
+                android:textSize="20sp"/>
 
             <TextView
                 android:id="@+id/a4_decimals"
@@ -90,10 +88,7 @@
                 android:textSize="30sp"
                 android:textAlignment="center"
                 android:text="@string/a4_decimals"
-                android:layout_weight="1"
-                android:gravity="center_horizontal" />
-
-
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/a4_dec_right"
@@ -103,9 +98,8 @@
                 android:onClick="Dec"
                 android:textColor="@color/colorBlack"
                 android:background="@color/colorGray4"
-                android:layout_margin="10sp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"/>
+                android:layout_marginHorizontal="10sp"
+                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -123,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorBlack"
                 android:textColor="@color/colorBlue"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:textSize="30sp"
                 android:textAlignment="textEnd"
                 android:text="@string/a4_default"
@@ -159,7 +153,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn11"
                 android:onClick="Mem"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorMaroon"
@@ -171,7 +165,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn12"
                 android:onClick="Mem"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorMaroon"
@@ -183,7 +177,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn13"
                 android:onClick="Mem"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorMaroon"
@@ -195,7 +189,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn14"
                 android:onClick="Mem"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorMaroon"
@@ -332,7 +326,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn41"
                 android:onClick="Num"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -344,7 +338,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn42"
                 android:onClick="Num"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -356,7 +350,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn43"
                 android:onClick="Num"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -368,7 +362,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn44"
                 android:onClick="Calc"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -446,7 +440,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn61"
                 android:onClick="Num"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -458,7 +452,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn62"
                 android:onClick="Num"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -470,7 +464,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn63"
                 android:onClick="Calc"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
@@ -482,7 +476,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/a4_btn64"
                 android:onClick="Calc"
-                android:layout_margin="10sp"
+                android:layout_marginHorizontal="10sp"
                 android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
