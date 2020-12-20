@@ -43,6 +43,9 @@
 
     <string name="a2_hint_text">Enter Item</string>
     <string name="a2_hint_btn">add</string>
+    <string name="a2_hint_btn2">del</string>
+    <string name="a2_hint_btn3">save</string>
+    <string name="a2_hint_btn4">undo</string>
 
     <string name="a3_header">The whole app is the third app so this activity will have miscellaneous tests</string>
     <string name="a3a_header">This activity will be testing button implementation</string>

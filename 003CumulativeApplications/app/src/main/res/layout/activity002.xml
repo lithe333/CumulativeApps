@@ -26,13 +26,41 @@
             android:layout_weight="4"
             android:layout_height="wrap_content"/>
 
-        <!-- This is button to add an item to the list-->
-        <Button
-            android:id="@+id/a2_add_btn"
-            android:hint="@string/a2_hint_btn"
+        <LinearLayout
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            android:orientation="vertical">
+
+            <!-- This is button to add an item to the list-->
+            <Button
+                android:id="@+id/a2_add_btn"
+                android:hint="@string/a2_hint_btn"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+
+            <Button
+                android:id="@+id/a2_del_btn"
+                android:hint="@string/a2_hint_btn2"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/a2_save_btn"
+                android:hint="@string/a2_hint_btn3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/a2_undo_btn"
+                android:hint="@string/a2_hint_btn4"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:visibility="gone"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -56,9 +84,6 @@
         android:onClick="Back"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorLimeGreen"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"/>
+        android:paddingHorizontal="20sp"/>
 
 </LinearLayout>

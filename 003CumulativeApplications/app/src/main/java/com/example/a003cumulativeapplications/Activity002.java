@@ -17,12 +17,16 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
 
     // Initialising the variables
     private EditText itemET;
-    private Button btn;
+    private Button btn, btn2, btn3, btn4;
     private ListView itemsList;
 
     // variables for reading and writings into the list
     private ArrayList<String> items;
     private ArrayAdapter<String> adapter;
+
+    // variables for editings items on the list
+    private int editPosition;
+    private String readItem;
 
     // associate the variables when opening the app
     // reading the data will store the list from previous run
@@ -34,6 +38,10 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
 
         itemET = findViewById(R.id.a2_item_edit_text);
         btn = findViewById(R.id.a2_add_btn);
+        btn2 = findViewById(R.id.a2_del_btn);
+        btn3 = findViewById(R.id.a2_save_btn);
+        btn4 = findViewById(R.id.a2_undo_btn);
+
         itemsList = findViewById((R.id.a2_items_list));
 
         items = A2FileHelper.readData(this);
@@ -42,6 +50,9 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
         itemsList.setAdapter(adapter);
 
         btn.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
         itemsList.setOnItemClickListener(this);
     }
 
@@ -59,6 +70,37 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
                 A2FileHelper.writeData(items, this);
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.a2_del_btn:
+                items.remove(editPosition);
+                adapter.notifyDataSetChanged();
+                itemET.setText("");
+                A2FileHelper.writeData(items,this);
+                Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
+                btn.setVisibility(View.VISIBLE);
+                btn2.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                btn4.setVisibility(View.GONE);
+                break;
+            case R.id.a2_save_btn:
+                String writeItem = itemET.getText().toString();
+                items.set(editPosition,writeItem);
+                adapter.notifyDataSetChanged();
+                itemET.setText("");
+                A2FileHelper.writeData(items,this);
+                Toast.makeText(this, "Item Updated", Toast.LENGTH_SHORT).show();
+                btn.setVisibility(View.VISIBLE);
+                btn2.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                btn4.setVisibility(View.GONE);
+                break;
+            case R.id.a2_undo_btn:
+                itemET.setText("");
+                Toast.makeText(this, "Item Returned", Toast.LENGTH_SHORT).show();
+                btn.setVisibility(View.VISIBLE);
+                btn2.setVisibility(View.GONE);
+                btn3.setVisibility(View.GONE);
+                btn4.setVisibility(View.GONE);
+                break;
         }
     }
 
@@ -66,10 +108,20 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
     // but it didn't update file so we need to use FileHelper.writedata again.
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        items.remove(position);
-        adapter.notifyDataSetChanged();
-        A2FileHelper.writeData(items,this);
-        Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
+        editPosition = position;
+        readItem = items.get(position);
+        itemET.setText(readItem);
+        Toast.makeText(this, "Item Loaded", Toast.LENGTH_SHORT).show();
+        btn.setVisibility(View.GONE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+
+        // old things below
+        //items.remove(position);
+        //adapter.notifyDataSetChanged();
+        //A2FileHelper.writeData(items,this);
+        //Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
     }
 
 }
