@@ -1,0 +1,19 @@
+Main Activity - List of Applications
+		 * Buttons Activity (for navigation)
+ - Activity 001 - Magic Eightball
+ - Activity 002 - To Do List
+		 * File Helper/adaptor
+ - Activity 003 - Testing Area
+		- Buttons
+		- Simple Problems
+			- Elementary (in progress)
+			- Lists, Strings (empty)
+			- Intermediate (empty)
+			- Advanced (empty)
+			- GUI (empty)
+			- Open Ended (empty)
+		- Template
+		- Fragments
+		 * Activities for each Fragments
+ - Activity 004 - Calculator
+ - Activity 005 - Card Game (empty)

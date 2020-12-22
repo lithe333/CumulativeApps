@@ -14,8 +14,8 @@ import java.text.DecimalFormat;
 
 public class Activity004 extends ButtonsActivity {
 
-    public boolean mode_simple = true;
-    public boolean mode_standard = false;
+    private boolean mode_simple = true;
+    private boolean mode_standard = false;
 
     private String number = "";
     private String decNum = "0";

@@ -53,6 +53,7 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
+
         itemsList.setOnItemClickListener(this);
     }
 

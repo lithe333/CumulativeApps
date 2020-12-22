@@ -6,17 +6,27 @@
 
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorGray">#333333</color>
-    <color name="colorGray2">#666666</color>
-    <color name="colorGray3">#999999</color>
-    <color name="colorGray4">#BBBBBB</color>
-    <color name="colorGray5">#DDDDDD</color>
+
+    <color name="colorGray">#2B2B2B</color>
+    <color name="colorGray2">#555555</color>
+    <color name="colorGray3">#808080</color>
+    <color name="colorGray4">#AAAAAA</color>
+    <color name="colorGray5">#D5D5D5</color>
+
+    <color name="colorWarm">#FFEAA0</color>
+    <color name="colorWarm2">#FFD495</color>
+    <color name="colorWarm3">#FFBF8B</color>
+    <color name="colorWarm4">#FFA980</color>
+    <color name="colorWarm5">#FF9476</color>
+    <color name="colorWarm6">#FF7E61</color>
+
     <color name="colorMaroon">#AA0000</color>
     <color name="colorRed">#FF0000</color>
     <color name="colorGreen">#00FF00</color>
     <color name="colorBlue">#0000FF</color>
 
     <color name="colorPastelYellow">#FFFFAA</color>
+    <color name="colorPastelRed">#FF6961</color>
     <color name="colorLimeGreen">#AAFFAA</color>
     <color name="colorLavender">#DCD0FF</color>
 
