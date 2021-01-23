@@ -9,11 +9,247 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20pt"
-            android:text="@string/a3b2_header"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorWarm2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:text="@string/a3b2_header"/>
+
+            <TextView
+                android:id="@+id/a3b2_output"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/a3b2_output"/>
+
+            <TextView
+                android:id="@+id/a3b2_answer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:typeface="monospace"
+                android:textSize="11sp"
+                android:text="@string/a3b2_answer"/>
+
+            <LinearLayout
+                android:id="@+id/a3b2_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20sp"
+                android:layout_marginBottom="20sp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/a3b2_input2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/a3b2_edit_text"
+                        android:hint="@string/a3b2_q1_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/a3b2_edit_text2"
+                        android:hint="@string/a3b2_q1_hint"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/a3b2_send_btn"
+                    android:hint="@string/a3b_send_btn"
+                    android:onClick="onQ2Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q1"
+                android:text="@string/a3b2_q1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q2"
+                android:text="@string/a3b2_q2"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q3"
+                android:text="@string/a3b2_q3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q4"
+                android:text="@string/a3b2_q4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q5"
+                android:text="@string/a3b2_q5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q6"
+                android:text="@string/a3b2_q6"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q7"
+                android:text="@string/a3b2_q7"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q8"
+                android:text="@string/a3b2_q8"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q9"
+                android:text="@string/a3b2_q9"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q10"
+                android:text="@string/a3b2_q10"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q11"
+                android:text="@string/a3b2_q11"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q12"
+                android:text="@string/a3b2_q12"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q13"
+                android:text="@string/a3b2_q13"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q14"
+                android:text="@string/a3b2_q14"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q15"
+                android:text="@string/a3b2_q15"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q16"
+                android:text="@string/a3b2_q16"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q17"
+                android:text="@string/a3b2_q17"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q18"
+                android:text="@string/a3b2_q18"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q19"
+                android:text="@string/a3b2_q19"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ2Click"
+                android:id="@+id/a3b2_q20"
+                android:text="@string/a3b2_q20"/>
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/a3b2_back_button1"

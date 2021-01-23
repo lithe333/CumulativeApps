@@ -3,10 +3,8 @@ package com.example.a003cumulativeapplications;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -17,9 +15,10 @@ public class Activity003B1 extends ButtonsActivity {
     private int display = 0;
     private View previous = null;
     private int number = 0;
+    private int choice = 0;
     private int max, root;
     private int[] guesses = {};
-    private boolean flag;
+    private boolean flag_run;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,12 +27,11 @@ public class Activity003B1 extends ButtonsActivity {
 
     }
 
-    public void onQClick(View view) {
+    public void onQ1Click(View view) {
         TextView output = findViewById(R.id.a3b1_output);
         TextView answer = findViewById(R.id.a3b1_answer);
         LinearLayout input_layout = findViewById(R.id.a3b1_input);
         TextView input = findViewById(R.id.a3b1_edit_text);
-        Button submit = findViewById(R.id.a3b1_add_btn);
         String answer_text, hor_bar, line, ver_bar;
         int i, j;
         double k, sum;
@@ -49,16 +47,10 @@ public class Activity003B1 extends ButtonsActivity {
             int question = 0;
 
             if (first == '1') {
-                switch (second) {
-                    case '.':
-                        question = 1;
-                        break;
-                    case '0':
-                        question = 10;
-                        break;
-                    case '1':
-                        question = 11;
-                        break;
+                if (second == '.') {
+                    question = 1;
+                } else {
+                    question = second - '0' + 10;
                 }
             } else {
                 question = first - '0';
@@ -69,38 +61,42 @@ public class Activity003B1 extends ButtonsActivity {
             }
 
             if (question == display) {
-                input_layout.setVisibility(view.GONE);
+                input_layout.setVisibility(View.GONE);
                 output.setText("Please select a question");
                 answer.setText("The solution will be printed here");
                 display = 0;
             } else {
                 ((TextView)view).setBackgroundColor(0xFFFFEAA0);
                 if ((first == '1')||(first == '7')||(first == '8')) {
-                    input_layout.setVisibility(view.GONE);
+                    input_layout.setVisibility(View.GONE);
                 } else {
-                    input_layout.setVisibility(view.VISIBLE);
+                    input_layout.setVisibility(View.VISIBLE);
                 }
                 output.setText("Question " + question);
                 display = question;
+
+                answer.setText("Waiting for input");
+                input.setText("");
 
                 switch (display) {
                     case 1:
                         answer.setText("Hello World");
                         break;
                     case 2:
-                        answer.setText("Waiting for input");
+                        input.setHint("Please provide your name");
                         break;
                     case 3:
-                        answer.setText("Waiting for input");
+                        input.setHint("Please provide your name");
                         break;
                     case 4:
-                        answer.setText("Waiting for input");
+                        input.setHint("Please provide an integer n to find the sum from 1 to n.");
                         break;
                     case 5:
-                        answer.setText("Waiting for input");
+                        input.setHint("Please provide an integer n to find the sum from 1 to n for values that are multiples of 3 and 5.");
                         break;
                     case 6:
-                        answer.setText("Waiting for input");
+                        flag_run = false;
+                        input.setHint("Please provide an integer n to find the sum or product from 1 to n.");
                         break;
                     case 7:
                         answer_text = "";
@@ -159,7 +155,7 @@ public class Activity003B1 extends ButtonsActivity {
                     case 9:
                         answer.setText("Waiting for input");
                         max = 10;
-                        flag = false;
+                        flag_run = true;
                         input.setHint("This is a guessing game. Please guess an integer from 0 to " + Integer.toString(max));
                         input.setText("");
                         number = max+1;
@@ -204,7 +200,6 @@ public class Activity003B1 extends ButtonsActivity {
             }
         }
         previous = view;
-        Toast.makeText(this, "test6", Toast.LENGTH_SHORT).show();
     }
 
     private boolean is_leap(int year) {
@@ -220,7 +215,8 @@ public class Activity003B1 extends ButtonsActivity {
         return false;
     }
 
-    public void onQSend(View view) {
+    public void onQ1Send(View view) {
+        int i, result;
         TextView answer = findViewById(R.id.a3b1_answer);
         TextView input = findViewById(R.id.a3b1_edit_text);
 
@@ -229,43 +225,115 @@ public class Activity003B1 extends ButtonsActivity {
 
         switch (question) {
             case 2:
-                answer.setText("Waiting for input");
+                if (input_text.isEmpty()) {
+                    answer.setText("Empty? I am still waiting for your name");
+                } else if (A3BInputReader.isInt(input_text)) {
+                    choice = Integer.parseInt(input_text);
+                    answer.setText("Your name is a number? Really?\nHi " + Integer.toString(choice) + "\nIf that was a mistake, please give me the correct name.");
+                } else {
+                    answer.setText("Hi " + input_text + "!\nLet me know if your name changes.");
+                }
                 break;
             case 3:
-                answer.setText("Waiting for input");
+                if (input_text.isEmpty()) {
+                    answer.setText("Empty? I am still waiting for your name");
+                } else if (A3BInputReader.isInt(input_text)) {
+                    choice = Integer.parseInt(input_text);
+                    answer.setText("Your name is a number? Really?\nHi " + Integer.toString(choice) + "\nIf that was a mistake, please give me the correct name.");
+                } else if ((input_text.equals("Alice"))||(input_text.equals("alice"))||(input_text.equals("Bob"))||(input_text.equals("bob"))) {
+                    answer.setText("Hi " + input_text + "!\nLet me know if your name changes.");
+                } else {
+                    answer.setText("Okay, Hi!\nWhat was your name again?");
+                }
                 break;
             case 4:
-                answer.setText("Waiting for input");
+                if (input_text.isEmpty()) {
+                    answer.setText("Empty? I am still waiting for that number");
+                } else if (A3BInputReader.isInt(input_text)) {
+                    choice = Integer.parseInt(input_text);
+                    if (choice <= 0) {
+                        answer.setText("Please enter a value greater than 1");
+                    } else {
+                        result = (choice*(choice+1))/2;
+                        answer.setText("The sum from 1 to " + Integer.toString(choice) + " will be: " + Integer.toString(result) + "\nPlease provide a new value for n.");
+                    }
+                } else {
+                    answer.setText("Please enter an integer value");
+                }
                 break;
             case 5:
-                answer.setText("Waiting for input");
+                if (input_text.isEmpty()) {
+                    answer.setText("Empty? I am still waiting for that number");
+                } else if (A3BInputReader.isInt(input_text)) {
+                    choice = Integer.parseInt(input_text);
+                    if (choice <= 2) {
+                        answer.setText("Please enter a value greater than 3");
+                    } else {
+                        result = 0;
+                        for (i=2; i<choice; i++) {
+                            if (((i+1)%3==0)||((i+1)%5==0)) {
+                                result += (i+1);
+                            }
+                        }
+                        answer.setText("The sum from 1 to " + Integer.toString(choice) + " for values that are multiples of 3 and 5 will be: " + Integer.toString(result) + "\nPlease provide a new value for n.");
+                    }
+                } else {
+                    answer.setText("Please enter an integer value");
+                }
                 break;
             case 6:
-                answer.setText("Waiting for input");
-                break;
-            case 9:
-                if (flag) {
-                    answer.setText("A new secret number has been chosen.");
-                    max = 10;
-                    flag = false;
-                    input.setHint("This is a guessing game. Please guess an integer from 0 to " + Integer.toString(max));
-                    input.setText("");
-                    number = max+1;
-                    guesses = new int[number];
-                    while (number > max) {
-                        number = (int)(Math.random()*(max+1));
+                if (!flag_run) {
+                    if (input_text.isEmpty()) {
+                        answer.setText("Empty? I am still waiting for that number");
+                    } else if (A3BInputReader.isInt(input_text)) {
+                        choice = Integer.parseInt(input_text);
+                        if (choice <= 0) {
+                            answer.setText("Please enter a value greater than 1");
+                        } else {
+                            if (choice == 1) {
+                                answer.setText("The product or sum when n is 1 will be: 1\nPlease provide a new value for n.");
+                            } else {
+                                answer.setText("You have chosen n as " + Integer.toString(choice) + ".\nNow, please choose either (P)roduct or (S)um.");
+                                flag_run = true;
+                                //flag_reset = false;
+                            }
+                        }
+                    } else {
+                        answer.setText("Please enter an integer value");
                     }
                 } else {
                     if (input_text.isEmpty()) {
-                        answer.setText("Empty? I am still waiting for input");
-                    } else if (isInt(input_text)) {
+                        answer.setText("Empty? Did you want the (P)roduct or (S)um of numbers from 1 to " + Integer.toString(choice) + "?");
+                    } else {
+                        if ((input_text.equals("Product"))||(input_text.equals("product"))||(input_text.equals("P"))||(input_text.equals("p"))) {
+                            result = 1;
+                            for (i=1; i<choice; i++) {
+                                result *= (i+1);
+                            }
+                            answer.setText("The product from 1 to " + Integer.toString(choice) + " will be: " + Integer.toString(result) + "\nPlease provide a new value for n.");
+                            flag_run = false;
+                        } else if ((input_text.equals("Sum"))||(input_text.equals("sum"))||(input_text.equals("S"))||(input_text.equals("s"))) {
+                            result = (choice*(choice+1))/2;
+                            answer.setText("The sum from 1 to " + Integer.toString(choice) + " will be: " + Integer.toString(result) + "\nPlease provide a new value for n.");
+                            flag_run = false;
+                        } else {
+                            answer.setText("Sorry I did not understand. Please no funny business.\nIs your choice (P)roduct or (S)um?");
+                        }
+                    }
+                }
+                break;
+            case 9:
+                if (flag_run) {
+                    if (input_text.isEmpty()) {
+                        answer.setText("Empty? I am still waiting for that number");
+                    } else if (A3BInputReader.isInt(input_text)) {
                         int guess = Integer.parseInt(input_text);
                         if ((guess > max)||(guess < 0)) {
                             answer.setText("Please enter a value from 0 to "+ Integer.toString(max));
                         } else {
                             if (guess == number) {
                                 answer.setText("Well done! The secret number was " + Integer.toString(guess) +"\n\n Click the button to play again.");
-                                flag = true;
+                                flag_run = false;
                             } else if (guesses[guess]==1) {
                                 answer.setText("You have already guessed " + Integer.toString(guess) + ". Please guess again");
                             } else {
@@ -276,18 +344,20 @@ public class Activity003B1 extends ButtonsActivity {
                     } else {
                         answer.setText("Please enter an integer value");
                     }
+                } else {
+                    answer.setText("A new secret number has been chosen.");
+                    max = 10;
+                    flag_run = true;
+                    input.setHint("This is a guessing game. Please guess an integer from 0 to " + Integer.toString(max));
+                    number = max+1;
+                    guesses = new int[number];
+                    while (number > max) {
+                        number = (int)(Math.random()*(max+1));
+                    }
                 }
-                input.setText("");
                 break;
         }
+        input.setText("");
     }
 
-    static boolean isInt(String s)
-    {
-        try
-        { int i = Integer.parseInt(s); return true; }
-
-        catch(NumberFormatException er)
-        { return false; }
-    }
 }

@@ -51,16 +51,16 @@
                 <EditText
                     android:id="@+id/a3b1_edit_text"
                     android:hint="@string/a3b1_q2_hint"
-                    android:layout_width="0dp"
                     android:layout_weight="4"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
                 <Button
-                    android:id="@+id/a3b1_add_btn"
-                    android:hint="@string/a3b1_add_btn"
-                    android:onClick="onQSend"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"/>
+                    android:id="@+id/a3b1_send_btn"
+                    android:hint="@string/a3b_send_btn"
+                    android:onClick="onQ1Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
             </LinearLayout>
 
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q1"
                 android:text="@string/a3b1_q1"/>
 
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q2"
                 android:text="@string/a3b1_q2"/>
 
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q3"
                 android:text="@string/a3b1_q3"/>
 
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q4"
                 android:text="@string/a3b1_q4"/>
 
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q5"
                 android:text="@string/a3b1_q5"/>
 
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q6"
                 android:text="@string/a3b1_q6"/>
 
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q7"
                 android:text="@string/a3b1_q7"/>
 
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q8"
                 android:text="@string/a3b1_q8"/>
 
@@ -141,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q9"
                 android:text="@string/a3b1_q9"/>
 
@@ -149,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q10"
                 android:text="@string/a3b1_q10"/>
 
@@ -157,7 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="20dp"
-                android:onClick="onQClick"
+                android:onClick="onQ1Click"
                 android:id="@+id/a3b1_q11"
                 android:text="@string/a3b1_q11"/>
 

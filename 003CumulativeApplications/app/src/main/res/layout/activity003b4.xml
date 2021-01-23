@@ -9,11 +9,135 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20pt"
-            android:text="@string/a3b4_header"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorWarm4"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:text="@string/a3b4_header"/>
+
+            <TextView
+                android:id="@+id/a3b4_output"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/a3b4_output"/>
+
+            <TextView
+                android:id="@+id/a3b4_answer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:typeface="monospace"
+                android:textSize="11sp"
+                android:text="@string/a3b4_answer"/>
+
+            <LinearLayout
+                android:id="@+id/a3b4_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20sp"
+                android:layout_marginBottom="20sp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/a3b4_input2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/a3b4_edit_text"
+                        android:hint="@string/a3b4_q1_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/a3b4_edit_text2"
+                        android:hint="@string/a3b4_q1_hint"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/a3b4_send_btn"
+                    android:hint="@string/a3b_send_btn"
+                    android:onClick="onQ4Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q1"
+                android:text="@string/a3b4_q1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q2"
+                android:text="@string/a3b4_q2"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q3"
+                android:text="@string/a3b4_q3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q4"
+                android:text="@string/a3b4_q4"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q5"
+                android:text="@string/a3b4_q5"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ4Click"
+                android:id="@+id/a3b4_q6"
+                android:text="@string/a3b4_q6"/>
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/a3b4_back_button1"

@@ -17,6 +17,8 @@ public class Activity004 extends ButtonsActivity {
     private boolean mode_simple = true;
     private boolean mode_standard = false;
 
+    private TextView lastClick = null;
+    private int lastColour = 0;
     private String number = "";
     private String decNum = "0";
     private String nullNum = "0";
@@ -33,10 +35,12 @@ public class Activity004 extends ButtonsActivity {
     private boolean errFlag = false;
     private boolean memFlag = false;
     private boolean nullFlag = true;
+    private boolean readyFlag = false;
+    private boolean resetFlag = true;
     private boolean rptFlag = false;
     private boolean roundFlag = false;
     private boolean stdFlag = false;
-    private boolean switchFlag = true;
+    private boolean switchFlag = false;
 
 
     private TextView displayTV, memoryTV, decimalsTV, tempTV;
@@ -100,6 +104,8 @@ public class Activity004 extends ButtonsActivity {
                     break;
             }
             return numberFormat.format(number);
+        } else if (number-(int)number==0){
+            return Integer.toString((int) number);
         } else {
             return Double.toString(number);
         }
@@ -203,6 +209,15 @@ public class Activity004 extends ButtonsActivity {
     public void Mem(View view) {
         displayTV = findViewById(R.id.a4_display);
         memoryTV = findViewById(R.id.a4_memory);
+        readyFlag = false;
+        switchFlag = false;
+
+        if (lastClick != null) {
+            ((TextView)lastClick).setBackgroundColor(lastColour);
+        }
+        lastClick = (TextView)view;
+        lastColour = 0xFF808080;
+        ((TextView)lastClick).setBackgroundColor(0xFFAAFFAA);
 
         if (!nullFlag) {
             nullNum = number;
@@ -261,11 +276,30 @@ public class Activity004 extends ButtonsActivity {
 
     public void Calc(View view) {
 
+        if (lastClick != null) {
+            ((TextView)lastClick).setBackgroundColor(lastColour);
+        }
+        lastClick = (TextView)view;
+        lastColour = 0xFFAAAAAA;
+        ((TextView)lastClick).setBackgroundColor(0xFFAAFFAA);
+
         displayTV = findViewById(R.id.a4_display);
         memoryTV = findViewById(R.id.a4_memory);
 
+        //symbol is previous symbol input
+        //symbol2 is current input
+        //symbol3 is for printing and tracking repeat
+        //num1 regular calculation
+        //num2 current display
+        //num3 memory value
+        //num4 repeater value
+
         if (nullFlag) {
             number = nullNum;
+        }
+
+        if (!resetFlag) {
+
             if (symbol == "/") {
                 if (number == "0") {
                     errFlag = true;
@@ -289,39 +323,32 @@ public class Activity004 extends ButtonsActivity {
                     symbol2 = "+";
             }
 
+            switchFlag = true;
+
             if (symbol2 != "=") {
-                if (symbol == symbol2) {
-                    symbol3 = symbol2;
+                if ((symbol == symbol2)&&(readyFlag)) {
                     if (!rptFlag) {
+                        symbol3 = symbol2;
                         rptFlag = true;
                         num4 = Double.parseDouble(number);
                     }
-                } else {
+                } else if (!stdFlag) {
                     symbol3 = "";
                     rptFlag = false;
-                    switchFlag = true;
                     num4 = 0;
                 }
             }
-        } else {
-            if (symbol != "=") {
-                symbol3 = symbol;
-            }
-        }
 
-        if (symbol != "") {
-            if (nullFlag) {
-                nullFlag = false;
-                if (stdFlag) {
-                    symbol3 = symbol;
-                }
-            } else {
-                symbol3 = symbol;
-            }
-            num2 = Double.parseDouble(number);
-            if (symbol3 != "") {
+            if (rptFlag) {
+                readyFlag = false;
                 switchFlag = false;
             }
+
+            if (!readyFlag) {
+                switchFlag = false;
+            }
+
+            num2 = Double.parseDouble(number);
 
             if (symbol3 == "/") {
                 if (rptFlag) {
@@ -335,48 +362,54 @@ public class Activity004 extends ButtonsActivity {
                 }
             }
 
-            switch (symbol3) {
-                case "*":
-                    if (rptFlag) {
-                        number = ToStringDec(num2*num4);
-                    } else {
-                        number = ToStringDec(num1*num2);
-                    }
-                    break;
-                case "/":
-                    if (rptFlag) {
-                        number = ToStringDec(num2/num4);
-                    } else {
-                        number = ToStringDec(num1/num2);
-                    }
-                    break;
-                case "-":
-                    if (rptFlag) {
-                        number = ToStringDec(num2-num4);
-                    } else {
-                        number = ToStringDec(num1-num2);
-                    }
-                    break;
-                case "+":
-                    if (rptFlag) {
-                        number = ToStringDec(num2+num4);
-                    } else {
-                        number = ToStringDec(num1+num2);
-                    }
-                    break;
+            if (!rptFlag) {
+                symbol3 = symbol;
+            }
+
+            if (!switchFlag) {
+                switch (symbol3) {
+                    case "*":
+                        if (rptFlag) {
+                            number = ToStringDec(num2*num4);
+                        } else {
+                            number = ToStringDec(num1*num2);
+                        }
+                        break;
+                    case "/":
+                        if (rptFlag) {
+                            number = ToStringDec(num2/num4);
+                        } else {
+                            number = ToStringDec(num1/num2);
+                        }
+                        break;
+                    case "-":
+                        if (rptFlag) {
+                            number = ToStringDec(num2-num4);
+                        } else {
+                            number = ToStringDec(num1-num2);
+                        }
+                        break;
+                    case "+":
+                        if (rptFlag) {
+                            number = ToStringDec(num2+num4);
+                        } else {
+                            number = ToStringDec(num1+num2);
+                        }
+                        break;
+                }
             }
 
             if (rptFlag) {
                 working = ToStringDec(num2) + " " + symbol3 + symbol3 + " " + ToStringDec(num4) + " " + "=" + " " ;
             } else if (switchFlag) {
+                working = number + " " + symbol2 + " ";
                 switchFlag = false;
-                working = number + " " + symbol3 + " ";
-            } else if (symbol3 != "=") {
-                working = ToStringDec(num1) + " " + symbol3 + " " + ToStringDec(num2) + " " + "=" + " " ;
+            } else if ((symbol3 != "")&&(symbol3 != "=")) {
+                working = ToStringDec(num1) + " " + symbol3 + " " + ToStringDec(num2) + " " + symbol2 + " " ;
             } else {
-                switchFlag = true;
+                working = number + " " + symbol2 + " ";
             }
-
+            switchFlag = false;
         }
 
         switch(view.getId()){
@@ -396,21 +429,19 @@ public class Activity004 extends ButtonsActivity {
                 symbol = "+";
                 break;
         }
-        num1 = Double.parseDouble(number);
 
-        if (symbol3 == "") {
-            switchFlag = true;
-        }
-
-        if (!rptFlag) {
-            symbol3 = "";
-        }
-
-        if (switchFlag) {
+        if (resetFlag) {
             working = number + " " + symbol + " ";
         }
+        resetFlag = false;
+        num1 = Double.parseDouble(number);
 
-        switchFlag = true;
+        if (stdFlag) {
+            readyFlag = false;
+            stdFlag = false;
+        } else {
+            readyFlag = true;
+        }
 
         if (errFlag) {
             nullNum = "NaN";
@@ -419,6 +450,7 @@ public class Activity004 extends ButtonsActivity {
             nullNum = number;
             DisplayDec(working,"temp");
         }
+
         number = "";
         decFlag = false;
         nullFlag = true;
@@ -430,12 +462,21 @@ public class Activity004 extends ButtonsActivity {
 
         displayTV = findViewById(R.id.a4_display);
         memoryTV = findViewById(R.id.a4_memory);
+        readyFlag = false;
+        switchFlag = false;
         stdFlag = true;
+
+        if (lastClick != null) {
+            ((TextView)lastClick).setBackgroundColor(lastColour);
+        }
+        lastClick = (TextView)view;
+        lastColour = 0xFF808080;
+        ((TextView)lastClick).setBackgroundColor(0xFFAAFFAA);
 
         if (nullFlag) {
             number = nullNum;
         }
-        rptFlag = false;
+        //rptFlag = false;
 
         switch(view.getId()) {
             case R.id.a4_btn21:
@@ -458,7 +499,7 @@ public class Activity004 extends ButtonsActivity {
         number = "";
         decFlag = false;
         nullFlag = true;
-        switchFlag = true;
+        //switchFlag = true;
         DisplayDec(nullNum,"display");
         //displayTV.setText(nullNum);
 
@@ -470,6 +511,15 @@ public class Activity004 extends ButtonsActivity {
         memoryTV = findViewById(R.id.a4_memory);
 
         nullFlag = false;
+        readyFlag = false;
+        switchFlag = false;
+
+        if (lastClick != null) {
+            ((TextView)lastClick).setBackgroundColor(lastColour);
+        }
+        lastClick = (TextView)view;
+        lastColour = 0xFFD5D5D5;
+        ((TextView)lastClick).setBackgroundColor(0xFFAAFFAA);
 
         switch(view.getId()) {
             case R.id.a4_btn24:
@@ -510,6 +560,7 @@ public class Activity004 extends ButtonsActivity {
                 number = number + "3";
                 break;
             case R.id.a4_btn61:
+                lastColour = 0xFFFFFFAA;
                 number = "";
                 nullNum = "0";
                 symbol = "";
@@ -523,9 +574,11 @@ public class Activity004 extends ButtonsActivity {
                 decFlag = false;
                 errFlag = false;
                 nullFlag = true;
+                //readyFlag = false;
+                resetFlag = true;
                 rptFlag = false;
                 stdFlag = false;
-                switchFlag = true;
+                //switchFlag = false;
                 break;
             case R.id.a4_btn62:
                 if (number != "") {
