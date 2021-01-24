@@ -23,6 +23,9 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
     // variables for reading and writings into the list
     private ArrayList<String> items;
     private ArrayAdapter<String> adapter;
+    // variables for preview
+    private ArrayList<String> itemsPreview;
+    private ArrayAdapter<String> adapter2;
 
     // variables for editings items on the list
     private int editPosition;
@@ -43,11 +46,17 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
         btn4 = findViewById(R.id.a2_undo_btn);
 
         itemsList = findViewById((R.id.a2_items_list));
-
         items = A2FileHelper.readData(this);
-
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, items);
-        itemsList.setAdapter(adapter);
+
+        itemsPreview = new ArrayList<String>(items);
+        for (int i = 0; i < items.size(); i++) {
+            itemsPreview.set(i,createPreview(items.get(i)));
+        }
+         adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, itemsPreview);
+
+        //itemsList.setAdapter(adapter);
+         itemsList.setAdapter(adapter2);
 
         btn.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -67,6 +76,7 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
             case R.id.a2_add_btn:
                 String itemEnterred = itemET.getText().toString();
                 adapter.add(itemEnterred);
+                 adapter2.add(createPreview(itemEnterred));
                 itemET.setText("");
                 A2FileHelper.writeData(items, this);
                 Toast.makeText(this, "Item Added", Toast.LENGTH_SHORT).show();
@@ -74,6 +84,8 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
             case R.id.a2_del_btn:
                 items.remove(editPosition);
                 adapter.notifyDataSetChanged();
+                 itemsPreview.remove(editPosition);
+                 adapter2.notifyDataSetChanged();
                 itemET.setText("");
                 A2FileHelper.writeData(items,this);
                 Toast.makeText(this, "Item Removed", Toast.LENGTH_SHORT).show();
@@ -81,11 +93,14 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
                 btn4.setVisibility(View.GONE);
+                itemsList.setVisibility(View.VISIBLE);
                 break;
             case R.id.a2_save_btn:
                 String writeItem = itemET.getText().toString();
                 items.set(editPosition,writeItem);
                 adapter.notifyDataSetChanged();
+                 itemsPreview.set(editPosition,writeItem);
+                 adapter2.notifyDataSetChanged();
                 itemET.setText("");
                 A2FileHelper.writeData(items,this);
                 Toast.makeText(this, "Item Updated", Toast.LENGTH_SHORT).show();
@@ -93,6 +108,7 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
                 btn4.setVisibility(View.GONE);
+                itemsList.setVisibility(View.VISIBLE);
                 break;
             case R.id.a2_undo_btn:
                 itemET.setText("");
@@ -101,8 +117,35 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
                 btn2.setVisibility(View.GONE);
                 btn3.setVisibility(View.GONE);
                 btn4.setVisibility(View.GONE);
+                itemsList.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    // modifying entries to create a preview
+    private String createPreview(String input) {
+        int length = input.length();
+        int max = 20;
+        String output = "";
+        int counter = 0;
+        int lines = 2;
+
+        for (int i = 0; (i<length)&&(i<max); i++) {
+            if (input.charAt(i) == '\n') {
+                counter++;
+            }
+            String temp = Character.toString((input.charAt(i)));
+            if (counter<lines) {
+                output = output + temp;
+            } else {
+                i = max;
+            }
+        }
+
+        if (output.length() < length) {
+            output = output + " ..";
+        }
+        return output;
     }
 
     // when list item is clicked, we remove the item
@@ -117,6 +160,7 @@ public class Activity002 extends ButtonsActivity implements View.OnClickListener
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
         btn4.setVisibility(View.VISIBLE);
+        itemsList.setVisibility(View.GONE);
 
         // old things below
         //items.remove(position);
