@@ -24,6 +24,9 @@
     <color name="colorRed">#FF0000</color>
     <color name="colorGreen">#00FF00</color>
     <color name="colorBlue">#0000FF</color>
+    <color name="colorYellow">#FFFF00</color>
+    <color name="colorCyan">#00FFFF</color>
+    <color name="colorMagenta">#FF00FF</color>
 
     <color name="colorPastelYellow">#FFFFAA</color>
     <color name="colorPastelRed">#FF6961</color>

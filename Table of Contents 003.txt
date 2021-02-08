@@ -6,10 +6,10 @@ Main Activity - List of Applications
  - Activity 003 - Testing Area
 		- Buttons
 		- Simple Problems
-			- Elementary (in progress)
-			- Lists, Strings (empty)
-			- Intermediate (empty)
-			- Advanced (empty)
+			- Elementary
+			- Lists, Strings
+			- Intermediate (in progress)
+			- Advanced (in progress)
 			- GUI (empty)
 			- Open Ended (empty)
 		- Template
