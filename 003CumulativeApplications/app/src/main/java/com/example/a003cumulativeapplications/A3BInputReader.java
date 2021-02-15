@@ -52,7 +52,7 @@ public class A3BInputReader {
                         int_all = false;
                         double_all = false;
                         length = array_list.get(i).length();
-                        if ((length < 3)||(array_list.get(i).charAt(length-1) != 'y')||(array_list.get(i).charAt(length-2) != 'a')) {
+                        if ((length < 3)||((array_list.get(i).charAt(length-1) != 'y')&&(array_list.get(i).charAt(length-1) != 'Y'))||((array_list.get(i).charAt(length-2) != 'a')&&(array_list.get(i).charAt(length-2) != 'A'))) {
                             is_pig = false;
                         }
                     } else {
@@ -61,7 +61,7 @@ public class A3BInputReader {
                         hex_all = false;
                         length = array_list.get(i).length();
                         if (!isPunc(array_list.get(i))) {
-                            if ((length < 3)||(array_list.get(i).charAt(length-1) != 'y')||(array_list.get(i).charAt(length-2) != 'a')) {
+                            if ((length < 3)||((array_list.get(i).charAt(length-1) != 'y')&&(array_list.get(i).charAt(length-1) != 'Y'))||((array_list.get(i).charAt(length-2) != 'a')&&(array_list.get(i).charAt(length-2) != 'A'))) {
                                 is_pig = false;
                             }
                         }

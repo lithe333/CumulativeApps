@@ -1136,10 +1136,11 @@ public class Activity003B2 extends ButtonsActivity {
     private String translatePigLatin(ArrayList<String> text, String mode) {
         String translation = "";
         int size = text.size();
-        int i, len;
+        int i, j, len;
         char ch;
         boolean caps = true;
         boolean space = false;
+        boolean all_caps;
         if (mode == "Pig Latin") {
             for (i = 0; i < size; i++) {
                 if (A3BInputReader.isPunc(text.get(i))) {
@@ -1155,18 +1156,33 @@ public class Activity003B2 extends ButtonsActivity {
                         space = false;
                     }
                     len = cleanValue(text.get(i)).length();
+                    all_caps = true;
+                    for (j = 0; j < len; j++) {
+                        ch = cleanValue(text.get(i)).charAt(j);
+                        if ((ch>='a')&&(ch<='z')) {
+                            all_caps = false;
+                        }
+                    }
                     ch = cleanValue(text.get(i)).charAt(len-3);
-                    if ((caps)&&(ch>='a')&(ch<='z')) {
+                    if (((caps)||(all_caps))&&(ch>='a')&&(ch<='z')) {
                         translation = translation + (char) (ch + 'A' - 'a');
+                    } else if (((!caps)&&(!all_caps))&&(ch>='A')&&(ch<='Z')) {
+                        translation = translation + (char) (ch - 'A' + 'a');
                     } else {
                         translation = translation + ch;
                     }
                     if (len > 3) {
-                        ch = cleanValue(text.get(i)).charAt(0);
-                        if ((ch>='A')&(ch<='Z')) {
-                            ch = (char) (ch - 'A' + 'a');
+                        for (j = 0; j < len - 3; j++) {
+                            ch = cleanValue(text.get(i)).charAt(j);
+                            if ((all_caps)&&(ch>='a')&&(ch<='z')) {
+                                translation = translation + (char) (ch + 'A' - 'a');
+                            } else if ((!all_caps)&&(ch>='A')&&(ch<='Z')) {
+                                translation = translation + (char) (ch - 'A' + 'a');
+                            } else {
+                                translation = translation + ch;
+                            }
                         }
-                        translation = translation + ch + cleanValue(text.get(i)).substring(1, len - 3);
+                        //translation = translation + ch + cleanValue(text.get(i)).substring(1, len - 3);
                     }
                     caps = false;
                     space = true;
@@ -1188,27 +1204,52 @@ public class Activity003B2 extends ButtonsActivity {
                         space = false;
                     }
                     len = cleanValue(text.get(i)).length();
+                    all_caps = true;
+                    for (j = 0; j < len; j++) {
+                        ch = cleanValue(text.get(i)).charAt(j);
+                        if ((ch>='a')&&(ch<='z')) {
+                            all_caps = false;
+                        }
+                    }
                     if (len > 1) {
                         ch = cleanValue(text.get(i)).charAt(1);
-                        if ((caps)&&(ch>='a')&(ch<='z')) {
+                        if (((caps)||(all_caps))&&(ch>='a')&&(ch<='z')) {
                             translation = translation + (char) (ch + 'A' - 'a');
+                        } else if (((!caps)&&(!all_caps))&&(ch>='A')&&(ch<='Z')) {
+                            translation = translation + (char) (ch - 'A' + 'a');
                         } else {
                             translation = translation + ch;
                         }
                         if (len > 2) {
-                            translation = translation + cleanValue(text.get(i)).substring(2);
+                            //translation = translation + cleanValue(text.get(i)).substring(2);
+                            for (j = 2; j < len; j++) {
+                                ch = cleanValue(text.get(i)).charAt(j);
+                                if ((all_caps)&&(ch>='a')&&(ch<='z')) {
+                                    translation = translation + (char) (ch + 'A' - 'a');
+                                } else if ((!all_caps)&&(ch>='A')&&(ch<='Z')) {
+                                    translation = translation + (char) (ch - 'A' + 'a');
+                                } else {
+                                    translation = translation + ch;
+                                }
+                            }
                         }
                         ch = cleanValue(text.get(i)).charAt(0);
-                        if ((ch>='A')&(ch<='Z')) {
+                        if ((all_caps)&&(ch>='a')&&(ch<='z')) {
+                            ch = (char) (ch + 'A' - 'a');
+                        } else if ((!all_caps)&&(ch>='A')&&(ch<='Z')) {
                             ch = (char) (ch - 'A' + 'a');
                         }
                     } else {
                         ch = ch = cleanValue(text.get(i)).charAt(0);
-                        if ((caps)&&(ch>='a')&(ch<='z')) {
+                        if (((caps)||(all_caps))&&(ch>='a')&(ch<='z')) {
                             ch = (char) (ch + 'A' - 'a');
                         }
                     }
-                    translation = translation + ch + "ay";
+                    if (all_caps) {
+                        translation = translation + ch + "AY";
+                    } else {
+                        translation = translation + ch + "ay";
+                    }
                     caps = false;
                     space = true;
                 }

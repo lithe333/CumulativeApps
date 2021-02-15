@@ -10,8 +10,8 @@ Main Activity - List of Applications
 			- Lists, Strings
 			- Intermediate (in progress)
 			- Advanced (in progress)
-			- GUI (empty)
-			- Open Ended (empty)
+			- GUI (in progress)
+			- Open Ended (in progress)
 		- Template
 		- Fragments
 		 * Activities for each Fragments

@@ -49,8 +49,8 @@
 
     <string name="a3_header">The whole app is the third app so this activity will have miscellaneous tests</string>
     <string name="a3a_header">This activity will be testing button implementation</string>
-    <string name="a3b_header">Simple Programming Problems sourced from:
-            https://adriann.github.io/programming_problems.html</string>
+    <string name="a3b_header">Simple Programming Problems sourced from:\n
+        https://adriann.github.io/programming_problems.html</string>
     <string name="a3b1_header">Elementary Questions</string>
     <string name="a3b2_header">Lists and Strings Questions</string>
     <string name="a3b3_header">Intermediate Questions</string>
@@ -73,7 +73,8 @@
     <string name="a3b1_q5">5. Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17</string>
     <string name="a3b1_q6">6. Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.</string>
     <string name="a3b1_q7">7. Write a program that prints a multiplication table for numbers up to 12.</string>
-    <string name="a3b1_q8">8. Write a program that prints all prime numbers. (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)</string>
+    <string name="a3b1_q8">8. Write a program that prints all prime numbers.\n
+        (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)</string>
     <string name="a3b1_q9">9. Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At the end the number of tries needed should be printed. It counts only as one try if they input the same number multiple times consecutively.</string>
     <string name="a3b1_q10">10. Write a program that prints the next 20 leap years.</string>
     <string name="a3b1_q11">11. Write a program that computes the sum of an alternating series where each element of the series is an expression of the form ((-1)^{k+1})/(2 * k-1) for each value of k from 1 to a million, multiplied by 4.</string>
@@ -88,7 +89,9 @@
     <string name="a3b2_q4">4. Write a function that returns the elements on odd positions in a list.</string>
     <string name="a3b2_q5">5. Write a function that computes the running total of a list.</string>
     <string name="a3b2_q6">6. Write a function that tests whether a string is a palindrome.</string>
-    <string name="a3b2_q7">7. Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion. (Subject to availability of these constructs in your language of choice.)</string>
+    <string name="a3b2_q7">7. Write three functions that compute the sum of the numbers in a list:\n
+        using a for-loop, a while-loop and recursion. \n
+        (Subject to availability of these constructs in your language of choice.)</string>
     <string name="a3b2_q8">8. Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares. The perfect squares can be found by multiplying each natural number with itself. The first few perfect squares are 1*1= 1, 2*2=4, 3*3=9, 4*4=16. Twelve for example is not a perfect square because there is no natural number m so that m*m=12. (This question is tricky if your programming language makes it difficult to pass functions as arguments.)</string>
     <string name="a3b2_q9">9. Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]</string>
     <string name="a3b2_q10">10. Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].</string>
@@ -101,13 +104,13 @@
     <string name="a3b2_q17">17. Implement the following sorting algorithms: Selection sort, Insertion sort, Merge sort, Quick sort, Stooge Sort. Check Wikipedia for descriptions.</string>
     <string name="a3b2_q18">18. Implement binary search.</string>
     <string name="a3b2_q19">19. Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
-
-*********
-* Hello *
-* World *
-* in    *
-* a     *
-* frame *
+\n
+*********\n
+* Hello \ *\n
+* World *\n
+* in \ \ \ \ \ \ \ *\n
+* a \ \ \ \ \ \ \ \ *\n
+* frame *\n
 *********</string>
     <string name="a3b2_q20">20. Write function that translates a text to Pig Latin and back. English is translated to Pig Latin by taking the first letter of every word, moving it to the end of the word and adding ‘ay’. “The quick brown fox” becomes “Hetay uickqay rownbay oxfay”.</string>
 
@@ -119,8 +122,8 @@
     <string name="a3b3_q2">2. Write a program that takes the duration of a year (in fractional days) for an imaginary planet as an input and produces a leap-year rule that minimizes the difference to the planet’s solar year.</string>
     <string name="a3b3_q3">3. Implement a data structure for graphs that allows modification (insertion, deletion). It should be possible to store values at edges and nodes. It might be easiest to use a dictionary of (node, edgelist) to do this.</string>
     <string name="a3b3_q4">4. Write a function that generates a DOT representation of a graph.</string>
-    <string name="a3b3_q5">5. Write a program that automatically generates essays for you.
-a) Using a sample text, create a directed (multi-)graph where the words of a text are nodes and there is a directed edge between u and v if u is followed by v in your sample text. Multiple occurrences lead to multiple edges.
+    <string name="a3b3_q5">5. Write a program that automatically generates essays for you.\n
+a) Using a sample text, create a directed (multi-)graph where the words of a text are nodes and there is a directed edge between u and v if u is followed by v in your sample text. Multiple occurrences lead to multiple edges.\n
 b) Do a random walk on this graph: Starting from an arbitrary node choose a random successor. If no successor exists, choose another random node.</string>
     <string name="a3b3_q6">6. Write a program that automatically converts English text to Morse code and vice versa.</string>
     <string name="a3b3_q7">7. Write a program that finds the longest palindromic substring of a given string. Try to be as efficient as possible!</string>
@@ -143,6 +146,25 @@ b) Do a random walk on this graph: Starting from an arbitrary node choose a rand
     <string name="a3b4_q4">4. Write a function that multiplies two matrices together. Make it as efficient as you can and compare the performance to a polished linear algebra library for your language. You might want to read about Strassen’s algorithm and the effects CPU caches have. Try out different matrix layouts and see what happens.</string>
     <string name="a3b4_q5">5. Implement a van Emde Boas tree. Compare it with your previous search tree implementations.</string>
     <string name="a3b4_q6">6. Given a set of d-dimensional rectangular boxes, write a program that computes the volume of their union. Start with 2D and work your way up.</string>
+
+    <string name="a3b5_output">Please select a question</string>
+    <string name="a3b5_answer">The solution will be printed here</string>
+    <string name="a3b5_q1_hint">Please enter a string in each space</string>
+
+    <string name="a3b5_q1">1. Write a program that displays a bouncing ball.</string>
+    <string name="a3b5_q2">2. Write a Memory game.\n
+        https://en.wikipedia.org/wiki/Concentration_(card_game)</string>
+    <string name="a3b5_q3">3. Write a Tetris clone.</string>
+
+    <string name="a3b6_output">Please select a question</string>
+    <string name="a3b6_answer">The solution will be printed here</string>
+    <string name="a3b6_q1_hint">Please enter a string in each space</string>
+
+    <string name="a3b6_q1">1. Write a program that plays Hangman as good as possible. For example you can use a large dictionary like this and select the letter that excludes most words that are still possible solutions. Try to make the program as efficient as possible, i.e. don’t scan the whole dictionary in every turn.\n
+    http://wordlist.sourceforge.net/</string>
+    <string name="a3b6_q2">2. Write a program that plays Rock, Paper, Scissors better than random against a human. Try to exploit that humans are very bad at generating random numbers.</string>
+    <string name="a3b6_q3">3. Write a program that plays Battle Ship against human opponents. It takes coordinates as input and outputs whether that was a hit or not and its own shot’s coordinates.</string>
+
 
     <string name="a4_header">This is simple/standard/advanced Calculator App</string>
     <string name="a4_mode_btn1">Simple</string>

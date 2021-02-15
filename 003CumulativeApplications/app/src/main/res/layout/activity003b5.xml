@@ -9,11 +9,112 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20pt"
-            android:text="@string/a3b5_header"/>
+            android:layout_height="wrap_content"
+            android:background="@color/colorWarm5"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"
+                android:text="@string/a3b5_header"/>
+
+            <TextView
+                android:id="@+id/a3b5_output"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/a3b5_output"/>
+
+            <TextView
+                android:id="@+id/a3b5_answer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:typeface="monospace"
+                android:textSize="11sp"
+                android:text="@string/a3b5_answer"/>
+
+            <LinearLayout
+                android:id="@+id/a3b5_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20sp"
+                android:layout_marginBottom="20sp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/a3b5_input2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/a3b5_edit_text"
+                        android:hint="@string/a3b5_q1_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <EditText
+                        android:id="@+id/a3b5_edit_text2"
+                        android:hint="@string/a3b5_q1_hint"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/a3b5_send_btn"
+                    android:hint="@string/a3b_send_btn"
+                    android:onClick="onQ5Send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ5Click"
+                android:id="@+id/a3b5_q1"
+                android:text="@string/a3b5_q1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ5Click"
+                android:id="@+id/a3b5_q2"
+                android:text="@string/a3b5_q2"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:onClick="onQ5Click"
+                android:id="@+id/a3b5_q3"
+                android:text="@string/a3b5_q3"/>
+
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/a3b5_back_button1"
